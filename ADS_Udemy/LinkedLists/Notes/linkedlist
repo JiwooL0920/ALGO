@@ -1,0 +1,10 @@
+items are not stored next to each other in memory - no random indexing 
+finding arbitary item - O(N)
+inserting items at the beginning - O(1)
+remove item from the beginning - O(1) 
+insert at the end - O(N)
+
+dynamic data structure -- can acquire memory at run time 
+need more memory because of references
+no random access -- we can only access first node 
+can't go back a node 

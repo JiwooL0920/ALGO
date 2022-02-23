@@ -1,0 +1,16 @@
+stack memory:
+- small size
+- fast access
+- stores function calls and local variables
+- no fragmentation 
+
+heap memory:
+- large size
+- slow access
+- stores objects
+- may become fragmented 
+
+queues are useful when a resource is shared with several consumers (ex. thread)
+threads are stored in queues (important in CPI scheduling)
+when data is transferred asynchronously between two processes
+graph algorithm rely heavily on queues: BFS use queue as underlying ADT 

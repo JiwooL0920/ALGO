@@ -1,0 +1,87 @@
+Abstract Data Type
+    - define the model (logical description_ for a certain data structure
+    - we just define what methods the data structure will have, so we define the basic behaviour
+    - it's just a model; we do not specify the concrete implementation or programming language
+    ex. stack ADT
+        push()
+        pop()
+        peek()
+
+Data Structures
+    - concrete implementation/actual representation of data
+    - aim: store and retrieve data in an efficient manner
+
+ADT                     DS
+stack                   array, linked list
+queue                   array, linked list
+priority queue          heap
+dictionary/hashmap      array
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Array
+    - make operations as fast as possible:
+        - inserting new items
+        - removing given items
+    - all items are identified with an index
+    - items are located right next to each other in RAM
+    - advantage: accessing items; Random access in O(1)
+
+Memory address(id) = array's address + index * data size (16 byte)
+
+Static array
+    - size of array doesn't change
+
+Dynamic Array
+    - size of array may change
+
+Application
+    - more complex data structure rely heavily on arrays because of random indexing
+        - O(1) access of items with known indices
+        - ex. stack, queue, dictionary (hash table)
+    - numerical methods use array (matrix related operations)
+
+Array Operations
+    1) Adding items - O(1)
+        - insert new item at the end until data structure is not full
+        - what if the data structure becomes full?
+            - allocate a larger chunk of memory in RAM (usually 2x size of actual array)
+            - copy existing items one by one to the new array
+            - resizing array takes O(N) => bottleneck
+        - huge trade-off between array size (memory) and running time
+            - start with a small sized array
+                - we do not waste memory BUT we have to resize the array often with O(N) running time
+            - allocate a huge array at the beginning
+                - we do waste memory because of the large size but at least we do not have to bother with the resize operation
+
+    2) Adding numbers to arbitrary positions - O(N)
+        - items must be shifted (worst case, all items)
+
+    3) Removing last item - O(1)
+    4) Removing item from arbitrary position - O(N)
+        - problem:
+            - usually we do not know the index of the item we want to remove
+            - after removing the item we need to deal with the holes in DS
+        - find item in O(N)
+        - remove item in O(1)
+        - finally shift the other items in O(N)
+
+Conclusion:
+- manipulating the last item (insertion or removal) = O(1) running time
+- manipulating arbitrary item (insertion or removal) = O(N) running time
+    - if these kinds of ops will dominate then array data structure is not the best option 
+
+Advantages:
+- random access: we can access arbitrary items extremely fast with indexes
+- easy and fast data structure; easy to understand and implement
+- fast data structures in the main
+- use when you want to manipulate last items of data or access item with known index
+
+Disadvantage;
+- need to know items we want to store at compile time: it's not dynamic data structure
+- since it's not dynamic, whenever the data structure is full, we have to resize in O(N) running time 
+- can't store items with different types (except python)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Lists and Arrays
+- there's no real array data structures in Python because almost everything is an object
+- NumPy

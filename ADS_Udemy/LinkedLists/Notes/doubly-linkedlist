@@ -1,0 +1,9 @@
+head and tail node 
+every node has 2 references (prev and next)
+
+head and tail nodes can be accessed in O(1) 
+removing a given node is easier because there is a pointer to the prev node 
+
+need more memory because of the references (2 pointers) 
+searching arbitrary item is still O(N)
+
